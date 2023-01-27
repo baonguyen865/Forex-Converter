@@ -21,11 +21,9 @@ def converting_form():
         b = form.base_currency.data
         c = form.converted_currency.data
         amount = form.amount.data
-        print(c)
-        print(b)
-        print(amount)
         rate = CurrencyRates()
         converted = rate.convert(b, c, amount)
+        print(converted)
 
     
     return render_template('base.html', form=form, converted=converted)
